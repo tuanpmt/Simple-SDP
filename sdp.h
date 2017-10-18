@@ -14,7 +14,7 @@ struct sdp_bandwidth {
     char *bandwidth;
 };
 
-struct sdp_payload {
+typedef struct sdp_payload {
     char *_payload;
 
     unsigned char proto_version;
@@ -74,7 +74,7 @@ struct sdp_payload {
         size_t attributes_count;
     } *medias;
     size_t medias_count;
-};
+} sdp_payload_t;
 
 struct sdp_payload *sdp_parse(const char *payload);
 void sdp_destroy(struct sdp_payload *sdp);
